@@ -2,15 +2,13 @@
   src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg" alt="Clarusway_FS" width="15px"></p>
 <br>
 
-# JS-CC-013: Stopwatch
+# Project-14 Stopwatch
 
 ## Assignment Statement
 
 - Time to put your newly learned skills to work!
 
-
 - Prepare a web page include functional stopwatch.
-
 
 ## Submit
 
@@ -28,7 +26,6 @@ At the end of the this coding challenge, students will be able to;
 
 ![Project 013 Snapshot](stopwatch.gif)
 
-
 ## Problem Statement
 
 - Create a web page
@@ -36,6 +33,7 @@ At the end of the this coding challenge, students will be able to;
   - Add Css to your web site
 
 -Write javaScript code
-  - Make a functional stopwatch.
+
+- Make a functional stopwatch.
 
 <center> ⌛ Happy Coding  ✍ </center>
