@@ -5,8 +5,31 @@ let reset = document.querySelector(".reset");
 let hour = document.querySelector(".hour");
 let minute = document.querySelector(".minute");
 let second = document.querySelector(".second");
-let milisecond = document.querySelector(".milisecond");
+let millisecond = document.querySelector(".millisecond");
 
-setTimeout(time, 100);
+let hr = 00;
+let mn = 00;
+let sc = 00;
+let ms = 00;
 
-function time() {}
+setInterval(time, 10);
+
+function time() {
+  ms++;
+  millisecond.textContent = ms;
+  if (ms == 1000) {
+    ms = 00;
+    sc++;
+    second.textContent = ms;
+    if (sc == 60) {
+      sc = 00;
+      mn++;
+      minute.textContent = mn;
+      if (mn == 60) {
+        mn = 00;
+        hr++;
+        hour.textContent = hr;
+      }
+    }
+  }
+}
