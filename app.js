@@ -13,24 +13,33 @@ let sc = 00;
 let mn = 00;
 let hr = 00;
 
-let interval;
+let timeInterval;
 
-// function interval() {
-//     interval = setInterval(time, 10)
-// }
+function interval() {
+  timeInterval = setInterval(time, 10);
+}
 
-// starter.onclick = interval;
+let IsCounting = false;
+
+if(IsCounting ? clearInterval(timeInterval) : (starter.onclick = interval);
 
 starter.onclick = () => {
   return (interval = setInterval(time, 10));
 };
 
-// setInterval(time, 10);
 reseter.onclick = () => {
   ms = 00;
+  millisecond.textContent = ms;
+
   sc = 00;
+  second.textContent = sc;
+
   mn = 00;
+  minute.textContent = mn;
+
   hr = 00;
+  hour.textContent = hr;
+
   clearInterval(interval);
 };
 
