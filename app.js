@@ -1,6 +1,7 @@
 //! SELECTORS:
 let timer = document.querySelector(".timer");
 let starter = document.querySelector(".starter");
+let stop = document.querySelector(".stop");
 let reset = document.querySelector(".reset");
 let hour = document.querySelector(".hour");
 let minute = document.querySelector(".minute");
@@ -12,7 +13,18 @@ let mn = 00;
 let sc = 00;
 let ms = 00;
 
-setInterval(time, 10);
+starter.onclick = () => setInterval(time, 10);
+
+reset.onclick = () => {
+  ms = 00;
+  sc = 00;
+  mn = 00;
+  hr = 00;
+  clearInterval(setInterval(time, 10));
+};
+
+// setInterval(time, 10);
+// clearInterval(time);
 
 function time() {
   ms++;
