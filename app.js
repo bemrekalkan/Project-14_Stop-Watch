@@ -19,6 +19,7 @@ function interval() {
   time_interval = setInterval(time, 100);
 }
 
+//? START BUTTON:
 starter.onclick = () => {
   if (isCounting) {
     clearInterval(time_interval);
@@ -31,6 +32,7 @@ starter.onclick = () => {
   }
 };
 
+//? RESET BUTTON:
 reseter.onclick = () => {
   ms = 000;
   sc = 00;
