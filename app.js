@@ -1,5 +1,4 @@
 //! SELECTORS:
-let timer = document.querySelector(".timer");
 let starter = document.querySelector(".starter");
 let reseter = document.querySelector(".reseter");
 let hour = document.querySelector(".hour");
@@ -13,51 +12,52 @@ let sc = 00;
 let mn = 00;
 let hr = 00;
 
-let timeInterval;
+let time_interval;
+let isCounting = false;
 
 function interval() {
-  timeInterval = setInterval(time, 10);
+  time_interval = setInterval(time, 100);
 }
 
-let IsCounting = false;
-
-if(IsCounting ? clearInterval(timeInterval) : (starter.onclick = interval);
-
 starter.onclick = () => {
-  return (interval = setInterval(time, 10));
+  if (isCounting) {
+    clearInterval(time_interval);
+    isCounting = false;
+    starter.textContent = "START";
+  } else {
+    interval();
+    isCounting = true;
+    starter.textContent = "STOP";
+  }
 };
 
 reseter.onclick = () => {
-  ms = 00;
-  millisecond.textContent = ms;
-
+  ms = 000;
   sc = 00;
-  second.textContent = sc;
-
   mn = 00;
-  minute.textContent = mn;
-
   hr = 00;
-  hour.textContent = hr;
-
-  clearInterval(interval);
+  millisecond.textContent = ms < 10 && "0" + ms;
+  second.textContent = sc < 10 && "0" + sc;
+  minute.textContent = mn < 10 && "0" + mn;
+  hour.textContent = hr < 10 && "0" + hr;
+  clearInterval(time_interval);
 };
 
 function time() {
   ms++;
-  millisecond.textContent = ms;
-  if (ms == 1000) {
-    ms = 00;
+  millisecond.textContent = ms < 10 ? "0" + ms : ms;
+  if (ms == 9) {
     sc++;
-    second.textContent = sc;
-    if (sc == 60) {
-      sc = 00;
+    ms = 00;
+    second.textContent = sc < 10 ? "0" + sc : sc;
+    if (sc == 59) {
       mn++;
-      minute.textContent = mn;
-      if (mn == 60) {
-        mn = 00;
+      sc = 00;
+      minute.textContent = mn < 10 ? "0" + mn : mn;
+      if (mn == 59) {
         hr++;
-        hour.textContent = hr;
+        mn = 00;
+        hour.textContent = hr < 10 ? "0" + hr : hr;
       }
     }
   }
